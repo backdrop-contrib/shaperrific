@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Make admin UI less ugly...
+ */
+.color-preview {
+  margin-top: 1.3em;
+}
+.color-preview iframe#preview {
+  border: 2px solid #eaeaea;
+  border-radius: 4px;
+}

@@ -1,0 +1,100 @@
+/**
+ * The shapes...
+ */
+/* play with shapes */
+body.has-shape::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: var(--shape-bg-color);
+}
+/* Circle shape. */
+body.shape-circle::before {
+  clip-path: circle(50%);
+  width: 75vw;
+  height: 75vw;
+  top: -35vw;
+  left: -15vw;
+  max-width: 1500px;
+  max-height: 1500px;
+}
+body.shape-circle.front::before {
+  top: -15vw;
+}
+@media (min-width: 62em) {
+  body.shape-circle::before {
+    top: -50vw;
+  }
+  body.shape-circle.front::before {
+    top: -32vw;
+  }
+}
+@media (min-width: 124em) {
+  body.shape-circle::before {
+    left: calc(50vw - 1300px);
+    top: -1000px;
+  }
+  body.shape-circle.front::before {
+    top: -600px;
+  }
+}
+/* Polygon 1 and 2 are similar. */
+body.shape-polygon-1::before,
+body.shape-polygon-2::before {
+  height: 24em;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+body.shape-polygon-1::before {
+  clip-path: polygon(0 0, 0 66%, 25% 100%, 100% 40%, 100% 0);
+}
+body.shape-polygon-2::before {
+  clip-path: polygon(0 0, 0 66%, 80% 100%, 100% 40%, 100% 0);
+}
+body.shape-polygon-1.front::before,
+body.shape-polygon-2.front::before {
+  height: 34em;
+}
+@media (min-width: 124em) {
+  body.shape-polygon-1::before,
+  body.shape-polygon-2::before {
+    height: 30em;
+  }
+  body.shape-polygon-1.front::before,
+  body.shape-polygon-2.front::before {
+    height: 48em;
+  }
+}
+/* Polygon 3 */
+body.shape-polygon-3::before {
+  height: 94vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 50% 60%);
+}
+@media (orientation: portrait) {
+  body.shape-polygon-3::before {
+    height: 70vh;
+  }
+}
+/* Ellipse */
+body.shape-ellipse::before {
+  width: 94vw;
+  height: 20vw;
+  top: 0;
+  left: 0;
+  clip-path: ellipse(65% 100% at 35% 0);
+}
+body.shape-ellipse.front::before {
+  height: 35vw;
+}
+@media (min-width: 160em) {
+  body.shape-ellipse::before {
+    top: -10vw;
+  }
+  body.shape-ellipse.front::before {
+    top: -15vw;
+  }
+}

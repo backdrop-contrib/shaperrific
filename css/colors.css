@@ -1,0 +1,12 @@
+/**
+ * Base variables, also fed into color module.
+ */
+:root {
+  --bedrock-text-color: #444444;
+  --bedrock-link-color: #327995;
+  --bedrock-bg-color: #fafafa;
+  --bedrock-bg-color-highlight: #ffffff;
+  --bedrock-bg-color-secondary: #e8f1f7;
+  --bedrock-border-color: #bbbbbb;
+  --shape-bg-color: #e6e1cd;
+}

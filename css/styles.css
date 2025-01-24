@@ -1,0 +1,185 @@
+/* Variables not relevant for the Color module. */
+:root {
+  --bedrock-font: 1.1rem/1.5 "Open Sans", sans-serif;
+  --bedrock-focus-halo-color: #539fc4;
+  --bedrock-danger-color: #c10000;
+}
+/**
+ * custom styles...
+ */
+.l-header {
+  padding-top: 4vw;
+}
+.l-header-inner {
+  min-height: 8em;
+}
+.l-footer {
+  background-color: var(--shape-bg-color);
+  position: relative;
+  margin-top: 30px;
+}
+.l-footer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: -60px;
+  height: 60px;
+  background-color: var(--shape-bg-color);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+.l-footer-inner {
+  padding: 1rem 0;
+}
+.block-hero {
+  padding: 4vw;
+  background-color: transparent;
+}
+.block-hero .block-title {
+  font-size: 2.5rem;
+}
+@media (min-width: 62em) {
+  .block-hero .block-title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 160em) {
+  .block-hero {
+    padding: 2vw;
+  }
+}
+.block-hero .block-content {
+  font-size: 1.5rem;
+}
+body.front .l-top .view-promoted-cards {
+  padding: 0;
+}
+body.front .l-top .view-promoted-cards .views-view-grid {
+  gap: 2rem;
+}
+body.front .l-top .view-promoted-cards .views-grid-box {
+  border: none;
+  background: var(--bedrock-bg-color-highlight);
+  padding: 0;
+  box-shadow: 0 0 20px #0002;
+}
+body.front .l-top .view-promoted-cards .views-field {
+  padding: 0 1rem;
+}
+body.front .l-top .view-promoted-cards .views-field:last-child {
+  padding-bottom: 1rem;
+}
+body.front .l-top .view-promoted-cards .views-field-field-image {
+  padding: 0;
+  vertical-align: bottom;
+}
+.block {
+  margin-bottom: 2rem;
+}
+.block.block-system-messages {
+  margin-bottom: 0;
+}
+.l-header .block:last-child {
+  margin-bottom: 1rem;
+}
+@media (max-width: 769px) {
+  .views-view-grid {
+    display: block;
+  }
+  .views-view-grid .views-grid-box {
+    margin-bottom: 2rem;
+  }
+}
+.view-promoted .view-content {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 62em) {
+  .view-promoted .view-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.view-promoted .view-content > div {
+  background: var(--bedrock-bg-color-highlight);
+  padding: 1em;
+  position: relative;
+}
+.view-promoted .view-content article {
+  position: relative;
+}
+.view-promoted .view-content > div::before {
+  content: "";
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  z-index: 0;
+  background-color: var(--shape-bg-color);
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+.view-promoted .view-content article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.view-promoted p.submitted {
+  text-align: end;
+}
+.view-promoted .view-content article .links {
+  margin-top: auto;
+  justify-content: end;
+  padding-top: 1rem;
+}
+.l-header .block-menu ul.menu-dropdown {
+  margin-inline-start: -1.2rem;
+}
+.site-name a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.8rem;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1em;
+}
+h5, h6 {
+  font-size: .9em;
+}
+@media (min-width: 48em) {
+  h1.page-title {
+    font-size: 2.2em;
+  }
+}
+.header-menu .links {
+  margin-top: 0;
+}
+.logo img {
+  width: 90px;/* hm... svg gets no width? */
+  max-height: 90px;
+}
+/* Make hero background full-width without touching layouts */
+.front .block-hero {
+  position: relative;
+}
+.front .block-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: calc((100vw - 100%) * -1 / 2);
+  left: calc((100vw - 100%) * -1 / 2);
+  box-shadow: 0px 8px 40px -5px #0004;
+}
+.item-list .pager {
+  margin: 2rem 0;
+}
