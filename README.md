@@ -23,6 +23,10 @@ If the Color module's turned off, you can change the background shape.
 If the Color module's turned on you can additionally configure all colors - or
 use one of the presets, assisted by a dynamic preview of the home page.
 
+## Dependencies
+
+- [Bedrock](https://backdropcms.org/project/bedrock)
+
 ## Issues
 
 Bugs and Feature requests should be reported in the
