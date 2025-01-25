@@ -163,7 +163,6 @@ h5, h6 {
   margin-top: 0;
 }
 .logo img {
-  width: 90px;/* hm... svg gets no width? */
   max-height: 90px;
 }
 /* Make hero background full-width without touching layouts */
@@ -179,6 +178,7 @@ h5, h6 {
   right: calc((100vw - 100%) * -1 / 2);
   left: calc((100vw - 100%) * -1 / 2);
   box-shadow: 0px 8px 40px -5px #0004;
+  background-color: inherit;
 }
 .item-list .pager {
   margin: 2rem 0;

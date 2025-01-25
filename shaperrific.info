@@ -8,12 +8,10 @@ stylesheets[all][] = css/colors.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/shapes.css
 
-; @todo does not work with color schemes...
 tinymce_content_css[] = ../../core/misc/opensans/opensans.css
 tinymce_content_css[] = ../bedrock/css/base.css
 tinymce_content_css[] = css/colors.css
 tinymce_content_css[] = css/styles.css
 
-; experiment
 settings[color] = true
 settings[shape] = 'shape-circle'
