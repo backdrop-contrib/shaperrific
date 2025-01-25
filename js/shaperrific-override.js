@@ -10,8 +10,8 @@ Backdrop.behaviors.color = {
    * Change iframe content body class according to selected shape.
    */
   updateShape: function () {
-    let currentVal = $('#edit-shape').val();
-    let iframeBody = $("#preview").contents().find('body')[0];
+    const currentVal = $('#edit-shape').val();
+    const iframeBody = $("#preview").contents().find('body')[0];
     for (let i = iframeBody.classList.length - 1; i >= 0; i--) {
       const className = iframeBody.classList[i];
       if (className.startsWith('shape-')) {
@@ -21,11 +21,11 @@ Backdrop.behaviors.color = {
     iframeBody.classList.add(currentVal);
   },
   /**
-   * Sets the current form values and refreshes the preview.
+   * Set the current form values and refresh the preview.
    */
   updatePreview: function () {
-    // Save the form values.
-    let values = {
+    // Set the form values.
+    const values = {
       scheme: $('#edit-scheme').val(),
       palette: {}
     };
@@ -35,12 +35,12 @@ Backdrop.behaviors.color = {
     });
 
     // This replaces the ajax post from color.js.
-    let $head = $("#preview").contents().find("head");
+    const $head = $("#preview").contents().find("head");
     let template = $('#css-template').text();
     for (const item in values.palette) {
       template = template.replace('%' + item + '%', values.palette[item]);
     }
-    let css = '<style type="text/css">' + template + '</style>';
+    const css = '<style type="text/css">' + template + '</style>';
     $head.append(css);
   },
   /**
@@ -55,26 +55,30 @@ Backdrop.behaviors.color = {
    * Attach overridden behavior.
    */
   attach: function (context) {
+    // If the color module's off, we don't need to do anything, as then we only
+    // have the shape select list in the form and no preview.
+    const schemeSelect = document.getElementById('edit-scheme');
+    if (!schemeSelect) {
+      return;
+    }
     const widget = this;
-    // @todo clean up this mess...
-    let settings = document.getElementById('edit-scheme').dataset;
-    let schemes = JSON.parse(settings.colorSchemes);
-    // This behavior attaches by ID, so is only valid once on a page.
-    let form = $('#system-theme-settings .color-form', context).once('color');
-    if (form.length === 0) {
+    const settings = schemeSelect.dataset;
+    const schemes = JSON.parse(settings.colorSchemes);
+    const form = $('#system-theme-settings .color-form', context);
+    if (!schemes || !form) {
       return;
     }
 
     // Setup custom preview.
-    let previewMarkup = '<div class="color-preview"><iframe id="preview" src="' + Backdrop.settings.shaperrific.previewUrl + '"></iframe></div>';
+    const previewMarkup = '<div class="color-preview"><iframe id="preview" src="' + Backdrop.settings.shaperrific.previewUrl + '"></iframe></div>';
     $('#system-theme-settings').addClass('has-preview').after(previewMarkup);
 
     // Set up colorScheme selector.
     $('#edit-scheme', form).on('change', function () {
-      let schemeName = this.value;
+      const schemeName = this.value;
       if (schemeName !== '' && schemes[schemeName]) {
         // Get colors of active scheme.
-        var colors = schemes[schemeName];
+        const colors = schemes[schemeName];
         for (const fieldName in colors) {
           if (colors.hasOwnProperty(fieldName)) {
             let input = $("input[data-color-name='" + fieldName + "']");
@@ -88,8 +92,8 @@ Backdrop.behaviors.color = {
     });
 
     $('input[data-color-name]').on('change', function () {
-      let schemeName =  document.getElementById('edit-scheme').value;
-      let key = this.dataset.colorName;
+      const schemeName =  schemeSelect.value;
+      const key = this.dataset.colorName;
       if (schemeName !== '' && this.value !== schemes[schemeName][key]) {
         widget.resetScheme();
       }
