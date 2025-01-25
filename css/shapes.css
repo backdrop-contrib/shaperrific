@@ -1,7 +1,6 @@
 /**
- * The shapes...
+ * The body background shapes.
  */
-/* play with shapes */
 body.has-shape::before {
   content: "";
   position: absolute;
