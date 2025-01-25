@@ -1,6 +1,7 @@
 <?php
 /**
- *
+ * @file
+ * Custom hooks for Shaperrific theme.
  */
 
 /**

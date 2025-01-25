@@ -3,6 +3,10 @@
  * @file
  * Color module support.
  */
+
+/**
+ * Color schemes information.
+ */
 $info = array(
   'fields' => array(
     'base' => t('Main background'),
