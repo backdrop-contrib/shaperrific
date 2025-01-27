@@ -55,6 +55,5 @@ $info = array(
       ),
     ),
   ),
-  'blend_target' => '#ffffff',
   'css' => array('css/colors.css'),
 );
