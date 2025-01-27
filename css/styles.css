@@ -183,6 +183,8 @@ h5, h6 {
 .item-list .pager {
   margin: 2rem 0;
 }
-.vertical-tabs {
+.vertical-tabs,
+.form-type-managed-file,
+.image-form-wrapper {
   font-size: 1rem;
 }
