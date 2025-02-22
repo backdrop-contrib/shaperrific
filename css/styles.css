@@ -33,6 +33,8 @@
 }
 .block-hero {
   padding: 4vw;
+}
+.block-hero-no-image {
   background-color: transparent;
 }
 .block-hero .block-title {
